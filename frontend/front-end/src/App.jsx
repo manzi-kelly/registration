@@ -14,19 +14,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* User registration */}
+        {/* User */}
         <Route path="/" element={<RegisterPage />} />
 
         {/* Admin */}
-        <Route
-          path="/admin/login"
-          element={<AdminLogin onSuccess={() => window.location.assign("/admin")} />}
-        />
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route
           path="/admin"
           element={
             <RequireAdmin>
-              <AdminDashboard onLogout={() => window.location.assign("/admin/login")} />
+              <AdminDashboard />
             </RequireAdmin>
           }
         />
